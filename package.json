@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/TripleJBlog/membership#readme",
   "dependencies": {
+    "antd": "^4.18.2",
+    "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.1",
     "concurrently": "^7.0.0",
@@ -28,9 +30,16 @@
     "express": "^4.17.2",
     "http-proxy-middleware": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.4"
+    "mongoose": "^6.1.4",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "^5.0.0",
+    "redux": "^4.1.2",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "web-vitals": "^2.1.3"
   }
 }
