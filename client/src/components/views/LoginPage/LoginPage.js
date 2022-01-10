@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { useDispatch } from "react-redux";
+import { loginUser } from "../../../_actions/user_actions";
 
-function LoginPage() {
+function LoginPage(props) {
   const dispatch = useDispatch();
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
@@ -15,7 +16,18 @@ function LoginPage() {
   };
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    dispatch(loginUser(body));
+
+    let body = {
+      email: Email,
+      password: Password,
+    };
+    dispatch(loginUser(body)).then((response) => {
+      if (response.payload.loginSuccess) {
+        props.history.push("/");
+      } else {
+        alert("Error");
+      }
+    });
   };
 
   return (
@@ -43,7 +55,7 @@ function LoginPage() {
         ></input>
 
         <br></br>
-        <button>Login</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
